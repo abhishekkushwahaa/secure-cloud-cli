@@ -23,4 +23,5 @@ func init() {
 	rootCmd.AddCommand(login)
 	rootCmd.AddCommand(upload)
 	rootCmd.AddCommand(download)
+	rootCmd.AddCommand(logout)
 }

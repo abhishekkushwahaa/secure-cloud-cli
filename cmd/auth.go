@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	"github.com/abhishekkushwahaa/secure-cloud-cli/db"
+	"github.com/abhishekkushwahaa/secure-cloud-cli/internal/auth"
 	"github.com/spf13/cobra"
 	"golang.org/x/crypto/bcrypt"
 )
@@ -65,6 +66,23 @@ var login = &cobra.Command{
 			return
 		}
 
+		err = auth.SaveSession(username)
+		if err != nil {
+			log.Fatalf("❌ Failed to save session: %v", err)
+		}
+
 		fmt.Println("✅ Login successful")
+	},
+}
+
+var logout = &cobra.Command{
+	Use:   "logout",
+	Short: "Logout a user",
+	Run: func(cmd *cobra.Command, args []string) {
+		err := auth.ClearSession()
+		if err != nil {
+			log.Fatal("❌ Logout failed:", err)
+		}
+		fmt.Println("✅ Logged out successfully!")
 	},
 }
