@@ -27,6 +27,7 @@ Server (File Storage + Metadata DB)
   |-- Stores Encrypted File (File System)
   |-- Stores Metadata (PostgreSQL/SQLite)
 ```
+
 <br>
 
 ![Secure Cloud](public/secure-cloud.png)
@@ -34,7 +35,7 @@ Server (File Storage + Metadata DB)
 ## Installation
 
 ```sh
-git clone https://github.com/yourusername/secure-cloud-cli.git
+git clone https://github.com/abhishekkushwahaa/secure-cloud-cli.git
 cd secure-cloud-cli
 go build -o securecloud
 ```
@@ -56,7 +57,7 @@ go build -o securecloud
 ## Configuration
 
 - **Storage Path:** `/data/encrypted_files/`
-- **Database:** PostgreSQL/SQLite stores metadata (user\_id, salt, nonce, filename, timestamp).
+- **Database:** PostgreSQL/SQLite stores metadata (user_id, salt, nonce, filename, timestamp).
 
 ## Security Model
 
