@@ -37,21 +37,29 @@ Server (File Storage + Metadata DB)
 ```sh
 git clone https://github.com/abhishekkushwahaa/secure-cloud-cli.git
 cd secure-cloud-cli
-go build -o securecloud
+go run .
 ```
 
 ## Usage
 
+### Commands
+
+- `go run . help` : Displays help information for the Secure Cloud CLI.
+- `go run . register` : Registers a new user with the Secure Cloud server.
+- `go run . login` : Logs in a user to the Secure Cloud server.
+- `go run . upload <file>` : Encrypts and uploads a file to the Secure Cloud server.
+- `go run . download <file.enc>` : Downloads and decrypts a file from the Secure Cloud server.
+
 ### Encrypt and Upload a File
 
 ```sh
-./securecloud encrypt-upload file.txt
+go run . upload file.txt
 ```
 
 ### Download and Decrypt a File
 
 ```sh
-./securecloud download-decrypt file.txt.enc
+go run . download file.txt.enc
 ```
 
 ## Configuration
